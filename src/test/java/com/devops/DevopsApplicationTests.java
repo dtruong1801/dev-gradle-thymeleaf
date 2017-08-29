@@ -20,7 +20,7 @@ public class DevopsApplicationTests {
 
 	@Test
 	public void testMessageByLocaleService() throws Exception {
-		String expectedResult = "Bootstrap starter template";
+		String expectedResult = "Bootstrap starter template (en_US)";
 		String messageId = "index.main.callout";
 
 		String actual = i18NService.getMessage(messageId);
