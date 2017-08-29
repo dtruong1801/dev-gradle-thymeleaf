@@ -1,4 +1,4 @@
-package com.devops.backend.persistence.domain.domain;
+package com.devops.backend.persistence.domain.backend;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,13 +15,13 @@ public class UserRole implements Serializable {
 
 
     @Id
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
 
     @Id
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private Role role;
 

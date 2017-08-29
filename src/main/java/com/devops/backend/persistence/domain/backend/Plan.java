@@ -1,4 +1,4 @@
-package com.devops.backend.persistence.domain.domain;
+package com.devops.backend.persistence.domain.backend;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,7 +8,7 @@ import java.io.Serializable;
  * Created by dtruong1801 on 8/29/17.
  */
 @Entity
-public class Role implements Serializable {
+public class Plan implements Serializable {
 
     /** The Serial Version UID for Serializable classes */
     private static final long serialVersionUID = 1L;
@@ -18,8 +18,7 @@ public class Role implements Serializable {
 
     private String name;
 
-    /** Default controller */
-    public Role() {
+    public Plan() {
 
     }
 
@@ -44,9 +43,9 @@ public class Role implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Role role = (Role) o;
+        Plan plan = (Plan) o;
 
-        return id == role.id;
+        return id == plan.id;
 
     }
 
