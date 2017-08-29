@@ -4,32 +4,41 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Created by dtruong1801 on 8/29/17.
+ * Created by marsdev on 8/22/17.
  */
 @Entity
-@Table(name = "user-role")
+@Table(name = "user_role")
 public class UserRole implements Serializable {
 
     /** The Serial Version UID for Serializable classes */
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Default constructor
+     */
+    public UserRole() {
+
+    }
+
+    /**
+     * Full constructor
+     * @param user
+     * @param role
+     */
+    public UserRole(User user, Role role) {
+        this.user = user;
+        this.role = role;
+    }
 
     @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-
     @Id
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "role_id")
     private Role role;
-
-
-    /** Default contructor */
-    public UserRole() {
-
-    }
 
     public User getUser() {
         return user;

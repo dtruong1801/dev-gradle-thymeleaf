@@ -1,5 +1,7 @@
 package com.devops.backend.persistence.domain.backend;
 
+import com.devops.enums.RoleEnum;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -21,6 +23,11 @@ public class Role implements Serializable {
     /** Default controller */
     public Role() {
 
+    }
+
+    public Role(RoleEnum roleEnum) {
+        id = roleEnum.getId();
+        name = roleEnum.getRoleName();
     }
 
     public int getId() {

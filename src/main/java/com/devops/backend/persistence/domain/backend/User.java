@@ -52,6 +52,14 @@ public class User implements Serializable {
     @JoinColumn(name = "plan_id")
     private Plan plan;
 
+    public Set<UserRole> getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(Set<UserRole> userRole) {
+        this.userRole = userRole;
+    }
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<UserRole> userRole = new HashSet<>();
 
@@ -133,7 +141,7 @@ public class User implements Serializable {
         this.country = country;
     }
 
-    public String getProfileImagesUrl() {
+    public String getProfileImagesUrl(String s) {
         return profileImagesUrl;
     }
 
